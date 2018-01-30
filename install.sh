@@ -6,6 +6,10 @@ composer install
 php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate
 
+echo "Giving write access to some directories."
+chmod -R 777 storage/
+chmod -R 777 bootstrap/cache/
+
 echo "Running npm will install all the necessary files to have laravel mix runing and also all the necessary files to have bootstrap, jquery, popper and fontawesome."
 npm install
 
